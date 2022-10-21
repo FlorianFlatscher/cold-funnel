@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  funnel:
+    build: .
+    platform: linux/amd64
+    restart: unless-stopped
+    networks:
+      - funnelnet
+
+networks:
+  funnelnet:
+    external:
+      name: proxy_net
